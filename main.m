@@ -1,1 +1,1 @@
-% this is for denoting this is a MATLAB project 
+% this is to denote this is a MATLAB project 
