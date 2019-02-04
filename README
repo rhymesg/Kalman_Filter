@@ -1,4 +1,5 @@
-MATLAB IMPLEMENTATION OF KALMAN FILTER AND EXTENDED KALMAN FILTER
+# Kalman_Filter
+MATLAB implementation of Kalman filter and extended Kalman filter
 
 Source code for examples in a book chapter "Introduction to Kalman Filter and Its Applications", IntechOpen (2018), written by Youngjoo Kim and Hyochoong Bang
 
