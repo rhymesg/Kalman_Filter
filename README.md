@@ -8,6 +8,8 @@ These are the authors' implementations accompanying the **peer-reviewed tutorial
 
 The accompanying tutorial chapter has received **over 500 citations** on [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=8b6KtGYAAAAJ&citation_for_view=8b6KtGYAAAAJ:hC7cP41nSMkC).
 
+For implementations in Python, C++, or other languages, follow the [KF equations](docs/kalman-filter.md), [EKF update procedure](docs/extended-kalman-filter.md), and [terrain measurement model](docs/terrain-referenced-navigation.md).
+
 ## Method
 
 Predict the state and covariance with a motion model, then correct them using measurements. The linear KF uses position/velocity observations; the EKFs linearize angle/range or terrain-height observations around the current estimate.
@@ -36,7 +38,7 @@ Generate one figure, such as Figure 5:
 matlab -batch "generate_figures(5)"
 ```
 
-See the [figure map and export options](docs/figures.md) for Figures 1-5, 8, and 9, seeds, and output metadata. Current-source results may differ from the paper's plots because later source revised equations/settings.
+See the [figure map and export options](docs/figures.md) for Figures 1-5, 8, and 9, seeds, and output metadata. The exporter uses the current equations and simulation settings.
 
 Run the seeded introductory INS/GNSS example without opening figure windows:
 
@@ -50,7 +52,7 @@ See [Examples](examples/README.md) for the two EKF commands, outputs, seeds, and
 
 ## Implementation scope
 
-Each script contains its model, simulation, filter updates, and plotting code; there is no separate filter API. Current source includes covariance and measurement corrections, with [settings and numerical assumptions](docs/limitations.md) documented for adaptation.
+Each script contains its model, simulation, filter updates, and plotting code. Current source includes covariance and measurement corrections, with [settings and numerical assumptions](docs/limitations.md) documented for adaptation.
 
 ### Checks
 
@@ -74,4 +76,4 @@ Machine-readable software and chapter metadata are in [CITATION.cff](CITATION.cf
 
 The [license](LICENSE) specifies the copyright and redistribution conditions. Citation requests are separate from those license conditions.
 
-See [provenance](docs/provenance.md) for source-distribution and dataset details, and [limitations](docs/limitations.md) before adapting the examples.
+See [provenance](docs/provenance.md) for source-distribution and dataset details, and [implementation notes](docs/limitations.md) for model and numerical choices.
