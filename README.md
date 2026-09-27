@@ -8,7 +8,7 @@ These are the authors' implementations accompanying the **peer-reviewed tutorial
 
 The accompanying tutorial chapter has received **over 500 citations** on [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=8b6KtGYAAAAJ&citation_for_view=8b6KtGYAAAAJ:hC7cP41nSMkC).
 
-These tutorial examples preserve version 1.0.3 equations and settings; review the documented [covariance and Jacobian issues](docs/limitations.md) before adapting them.
+Review the documented [covariance and Jacobian issues](docs/limitations.md) before adapting these examples.
 
 ## Installation
 

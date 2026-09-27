@@ -1,6 +1,6 @@
 # Generate Chapter Figures
 
-Generate a current-code counterpart of each simulation figure in the [chapter](https://doi.org/10.5772/intechopen.80600), retaining figure numbers 1-5, 8, and 9. Results use the supplied version 1.0.3 equations and settings; they are not fitted to the paper's historical curves.
+Generate a current-code counterpart of each simulation figure in the [chapter](https://doi.org/10.5772/intechopen.80600), retaining figure numbers 1-5, 8, and 9. Results use the current repository's equations and settings; they are not fitted to the paper's historical curves.
 
 ## Commands
 
