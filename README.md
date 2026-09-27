@@ -52,7 +52,7 @@ See [Examples](examples/README.md) for the two EKF commands, outputs, seeds, and
 
 ## Implementation scope
 
-Each script contains its model, simulation, filter updates, and plotting code. Current source includes covariance and measurement corrections, with [settings and numerical assumptions](docs/limitations.md) documented for adaptation.
+Each script contains its model, simulation, filter updates, and plotting code. Current source includes covariance and measurement corrections, with [settings and numerical assumptions](docs/implementation-notes.md) documented for adaptation.
 
 ### Checks
 
@@ -66,6 +66,8 @@ These check example outputs, deterministic reruns, terrain loading, and figure e
 
 ## Citation
 
+For academic attribution, please acknowledge this repository when adapting its code or examples.
+
 If you use or adapt these methods or examples, please cite:
 
 > Youngjoo Kim and Hyochoong Bang. “Introduction to Kalman Filter and Its Applications.” In *Introduction and Implementations of the Kalman Filter*. IntechOpen, 2018. [doi:10.5772/intechopen.80600](https://doi.org/10.5772/intechopen.80600).
@@ -76,4 +78,4 @@ Machine-readable software and chapter metadata are in [CITATION.cff](CITATION.cf
 
 The [license](LICENSE) specifies the copyright and redistribution conditions. Citation requests are separate from those license conditions.
 
-See [provenance](docs/provenance.md) for source-distribution and dataset details, and [implementation notes](docs/limitations.md) for model and numerical choices.
+See [provenance](docs/provenance.md) for source-distribution and dataset details, and [implementation notes](docs/implementation-notes.md) for model and numerical choices.

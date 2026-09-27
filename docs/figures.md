@@ -44,7 +44,7 @@ The linear-KF script also produces a true/estimated-state plot that has no chapt
 
 - Each requested simulation group runs once, with its random stream reset to the requested seed. A figure generated alone uses the same samples as that figure in a complete export in the same environment.
 - Figure numbers select exports; the underlying original script may calculate and draw other figures in its group before they are closed.
-- The author reports that later source corrects a paper equation. The [release history and independent checks](limitations.md#correction-history) distinguish that correction history from currently verifiable source observations; the exact historical correction is not identified.
+- The author reports that later source corrects a paper equation. The [release history and independent checks](implementation-notes.md#correction-history) distinguish that correction history from currently verifiable source observations; the exact historical correction is not identified.
 - Changed equations/settings and different random draws can change the curves. Use the current source as the execution baseline; do not change it merely to reproduce a printed plot.
 - The exporter runs without visible figure windows and restores the random state and default visibility afterward. The supplied scripts still close existing figures, so use a separate batch process.
 

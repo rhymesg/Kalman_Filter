@@ -44,9 +44,9 @@ Figure 8 uses grid-index axes (1-100), rather than the filter's local coordinate
 | Eqs. (39)-(40): initialization | `sig_init`, initial `x_est`, `P`; settings differ |
 | Figures 8-9 | terrain contour and position-RMSE plots |
 
-## Boundaries and limitations
+## Terrain input contract
 
 - Each lookup requires both floored grid indices to lie between 3 and 98, inclusive, for the supplied `100 x 100` matrix. The gradient's displaced samples must also satisfy this condition.
-- There is no clamping, extrapolation policy, or recovery from an out-of-map estimate; changing trajectories or initial uncertainty can produce indexing errors.
-- Flat terrain provides little local position information; ambiguous terrain and large initial errors can defeat local linearization.
-- The dataset's geographic provenance is not documented in the bundle. The initial uncertainty differs from the chapter; see [limitations](limitations.md).
+- Keep the trajectory, initial estimates, and displaced gradient samples within the interpolation neighborhood.
+- Use terrain with local height variation to supply position information for the EKF linearization.
+- The bundled DEM is a local-coordinate example. See [source settings](implementation-notes.md#settings-that-differ-from-the-chapter) for initialization and interpolation choices.

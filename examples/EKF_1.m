@@ -60,7 +60,7 @@ P_diag = zeros(6,N+1); % diagonal term of error covariance matrix
 for m = 1:1:M
     % initial guess
     x_est(:,1) = x_true(:,1) + normrnd(0, sig_init);
-    P = [eye(3)*sig_init(1)^2, zeros(3); zeros(3), eye(3)*sig_init(4)^2];
+    P = diag(sig_init.^2);
     P_diag(:,1) = diag(P);
     for k = 2:1:N+1
         

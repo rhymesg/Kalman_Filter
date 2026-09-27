@@ -13,5 +13,5 @@ MATLAB tutorial examples of Kalman and extended Kalman filters for INS/GNSS navi
 ## Links and citation
 
 - Keep the canonical repository URL and paper DOI consistent with [CITATION.cff](../CITATION.cff).
-- Point readers to the [README's algorithm map](../README.md#algorithms-and-source) and [known limitations](limitations.md).
+- Point readers to the [README's algorithm map](../README.md#algorithms-and-source) and [implementation reference](implementation-notes.md).
 - Use GitHub release tags for current versioning and identify the corresponding repository revision; keep imported source versions in [historical provenance](provenance.md#source-distribution).

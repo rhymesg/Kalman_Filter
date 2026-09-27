@@ -60,4 +60,4 @@ The code treats the first matrix index as x, the second as y, and uses grid spac
 
 ## Before adapting
 
-Read the [model assumptions, settings, and corrections](../docs/limitations.md) and [citation guidance](../README.md#citation). A successful execution checks the implementation path, not every statistical assumption.
+Read the [model assumptions, settings, and corrections](../docs/implementation-notes.md) and [citation guidance](../README.md#citation). A successful execution checks the implementation path, not every statistical assumption.

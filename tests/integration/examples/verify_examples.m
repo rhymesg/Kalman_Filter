@@ -24,6 +24,9 @@ assert(isequal(entry.estimates, kf.estimates), ...
 
 tracking = execute_script(fullfile(root, 'examples', 'EKF_1.m'));
 check_output(tracking, [6, 21, 100], [-10; -50; 0; -1; -2; 0], 'EKF_1');
+unequal = execute_nonuniform_tracking(fullfile(root, 'examples', 'EKF_1.m'));
+assert(norm(unequal.covariance(:,1)-[1;4;9;16;25;36], inf) < 1e-12, ...
+    'Each initial standard deviation must set its own covariance diagonal.');
 
 p = tracking.relative_position;
 h = 1e-5;
@@ -57,6 +60,19 @@ rng(0, 'twister');
 EKF_2;
 result = struct('estimates', res_x_est, 'truth', x_true, ...
     'rmse', x_RMSE, 'covariance', P_diag);
+end
+
+function result = execute_nonuniform_tracking(script_file)
+% Exercise the editable six-state configuration with distinct uncertainties.
+source = fileread(script_file);
+source = regexprep(source, 'sig_init\s*=\s*\[[^\]]*\];', ...
+    'sig_init = [1;2;3;4;5;6];');
+temporary_script = [tempname, '.m'];
+file = fopen(temporary_script, 'w');
+fprintf(file, '%s', source);
+fclose(file);
+cleanup = onCleanup(@() delete(temporary_script)); %#ok<NASGU>
+result = execute_script(temporary_script);
 end
 
 function check_output(result, expected_size, expected_endpoint, name)

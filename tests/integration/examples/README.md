@@ -25,7 +25,7 @@ The scripts still close existing figures; use the separate batch process above. 
 
 Endpoint tolerances cover floating-point roundoff in deterministic truth propagation; covariance diagonals permit a negative roundoff margin of `1e-12`. No statistical accuracy threshold or paper-result reproduction is asserted.
 
-The terrain input is the unchanged [DEM.mat](../../../examples/DEM.mat) from the original bundle; see [provenance](../../../docs/provenance.md). Scientific caveats are documented separately in [limitations](../../../docs/limitations.md).
+The terrain input is the unchanged [DEM.mat](../../../examples/DEM.mat) from the original bundle; see [provenance](../../../docs/provenance.md). Scientific caveats are documented separately in [implementation details](../../../docs/implementation-notes.md).
 
 ## Figure exports
 

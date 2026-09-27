@@ -27,7 +27,7 @@ The first angle is measured using `atan2(x,y)`, not the commonly used `atan2(y,x
 3. Form the measurement Jacobian `H` at that relative position, starting from Eq. (28) with the documented elevation-derivative correction.
 4. Compute `y = z - z_p`, wrap its angular components to the principal interval, calculate `K = P*H'/(R+H*P*H')`, and apply the state and covariance corrections described in [the KF recursion](kalman-filter.md#prediction-and-correction).
 
-For a general EKF, the transition and measurement matrices are the Jacobians of the nonlinear models at the current estimate, as in Eqs. (21)-(22). Here only the measurement model is nonlinear; its elevation Jacobian is [corrected from the historical expression](limitations.md#target-tracking-jacobian).
+For a general EKF, the transition and measurement matrices are the Jacobians of the nonlinear models at the current estimate, as in Eqs. (21)-(22). Here only the measurement model is nonlinear; its elevation Jacobian is [corrected from the historical expression](implementation-notes.md#target-tracking-jacobian).
 
 ## Paper-to-code map
 
@@ -43,6 +43,6 @@ For a general EKF, the transition and measurement matrices are the Jacobians of 
 ## Interpretation and limits
 
 - A single measurement has no direct velocity component; velocity information can enter through dynamics and covariance coupling over successive measurements.
-- Process-noise and initial-covariance settings differ from the printed chapter; see the [comparison table](limitations.md#settings-that-differ-from-the-chapter).
+- Process-noise and initial-covariance settings differ from the printed chapter; see the [comparison table](implementation-notes.md#settings-that-differ-from-the-chapter).
 - Azimuth and elevation residuals are wrapped to the principal interval before the update; the Jacobian remains singular at zero horizontal range or zero range.
 - The EKF uses local linearization and the simple covariance update; finite output alone does not establish consistency or convergence.

@@ -22,7 +22,7 @@ The local `ref/` folder holds the original bundle and paper for comparison and i
 | [main.m](../main.m) | Repository entry point for the seeded linear-KF example |
 | [generate_figures.m](../generate_figures.m) | Seeded chapter-number selection and PNG/PDF export with metadata |
 
-The covariance and tracking-measurement corrections change filter results. Noise standard deviations, initialization, interpolation choices, and plotting calculations retain their supplied settings. [Known limitations](limitations.md) remain visible for users adapting the code.
+The covariance and tracking-measurement corrections change filter results. Noise standard deviations, initialization, interpolation choices, and plotting calculations retain their supplied settings. [Implementation reference](implementation-notes.md) describes the covariance, observation, and output conventions for adaptation.
 
 The author reports an equation correction in later source; the exact historical equation has not been identified. Generated figures follow the current corrected source, with [differences from the printed plots documented explicitly](figures.md#reproducibility-and-paper-differences).
 
@@ -35,6 +35,6 @@ The bundle includes the terrain matrix without a separate description of its geo
 - Paper section/equation mappings and the disclosed discrepancies were checked against the supplied PDF, including visual inspection of equations.
 - Local documentation links were checked, and `CITATION.cff` was validated against the official CFF 1.2.0 schema.
 - The examples, figure exporter, and integration drivers pass a MATLAB R2019a syntax check with MISS_HIT.
-- Mathematical spot checks support the covariance and Jacobian corrections described in [limitations](limitations.md).
+- Mathematical spot checks support the covariance and Jacobian corrections described in [implementation details](implementation-notes.md).
 
 The [integration checks](../tests/integration/examples/README.md) cover seeded examples and figure exports. Record MATLAB/toolbox versions and seeds with generated results.
