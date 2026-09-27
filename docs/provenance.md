@@ -15,16 +15,16 @@ The local `ref/` folder holds the original bundle and paper for comparison and i
 
 | File | Change relative to the supplied bundle |
 |---|---|
-| [KF.m](../examples/KF.m), [EKF_1.m](../examples/EKF_1.m) | Added provenance headers and chapter-numbered figure names/tags; simulation and plot data unchanged |
+| [KF.m](../examples/KF.m), [EKF_1.m](../examples/EKF_1.m) | Provenance headers and figure names/tags; corrected acceleration covariance, elevation derivative, and angular innovations |
 | [EKF_2.m](../examples/EKF_2.m) | Added headers and figure names/tags; resolved `DEM.mat` relative to the script, loading only `DEM` |
 | [DEM.mat](../examples/DEM.mat) | Exact byte copy |
 | [LICENSE](../LICENSE) | Exact copy of `license.txt`, including its original wording |
 | [main.m](../main.m) | Repository entry point for the seeded linear-KF example |
 | [generate_figures.m](../generate_figures.m) | Seeded chapter-number selection and PNG/PDF export with metadata |
 
-No filtering equations, noise parameters, initialization, interpolation choices, or plotting calculations were changed. [Known limitations](limitations.md) remain visible for users adapting the code.
+The covariance and tracking-measurement corrections change filter results. Noise standard deviations, initialization, interpolation choices, and plotting calculations retain their supplied settings. [Known limitations](limitations.md) remain visible for users adapting the code.
 
-The author reports an equation correction in later source; the exact historical equation has not been identified. Generated figures follow the supplied source, with [differences from the printed plots documented explicitly](figures.md#reproducibility-and-paper-differences).
+The author reports an equation correction in later source; the exact historical equation has not been identified. Generated figures follow the current corrected source, with [differences from the printed plots documented explicitly](figures.md#reproducibility-and-paper-differences).
 
 The bundle includes the terrain matrix without a separate description of its geographical origin or datum. Its SHA-256 checksum is `59d1848bbffc59f8069ebcea43a4423fde82b9a1720ec8da1eb705da96de2f68`.
 
@@ -35,7 +35,7 @@ The bundle includes the terrain matrix without a separate description of its geo
 - Paper section/equation mappings and the disclosed discrepancies were checked against the supplied PDF, including visual inspection of equations.
 - Local documentation links were checked, and `CITATION.cff` was validated against the official CFF 1.2.0 schema.
 - The examples, figure exporter, and integration drivers pass a MATLAB R2019a syntax check with MISS_HIT; this does not execute their MATLAB APIs or render their figures.
-- Mathematical spot checks confirm the covariance and Jacobian issues described in [limitations](limitations.md); they do not execute the MATLAB filters.
+- Mathematical spot checks support the covariance and Jacobian corrections described in [limitations](limitations.md); they do not execute the MATLAB filters.
 - No MATLAB or Octave runtime was available during repository preparation. The documented commands, [integration checks](../tests/integration/examples/README.md), and example plots have not been executed in this layout.
 
 Record MATLAB/toolbox versions, seed, and execution results here when native verification becomes available. A passing smoke check does not imply agreement with every equation or result in the publication.

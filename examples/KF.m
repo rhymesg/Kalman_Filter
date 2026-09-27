@@ -23,11 +23,11 @@ sig_gps_true = [3; 3; 3; 0.03; 0.03; 0.03]; % true value of standard deviation o
 sig_acc = [0.3; 0.3; 0.3]; % user input of standard deviation of accelerometer noise
 sig_gps = [3; 3; 3; 0.03; 0.03; 0.03]; % user input of standard deviation of GPS noise
 
-Q = [diag(0.25*dt^4*sig_acc.^2), zeros(3); zeros(3), diag(dt^2*sig_acc.^2)]; % process noise covariance matrix
 R = [diag(sig_gps(1:3).^2), zeros(3); zeros(3), diag(sig_gps(4:6).^2)]; % measurement noise covariance matrix
 
 F = [eye(3), eye(3)*dt; zeros(3), eye(3)]; % state transition matrix
 B = [0.5*eye(3)*dt^2; eye(3)*dt]; % control-input matrix
+Q = B*diag(sig_acc.^2)*B'; % shared acceleration noise covariance
 H = eye(6); % measurement matrix
 
 

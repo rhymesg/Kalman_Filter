@@ -47,5 +47,5 @@ MATLAB's right division in `K = P*H'/(R+H*P*H')` solves the linear system withou
 
 - The true trajectory is deterministic; acceleration and GNSS samples vary across Monte Carlo runs.
 - `x_RMSE` includes bias, while `sqrt(P_diag)` is the filter's predicted marginal standard deviation. Their agreement must be assessed, not assumed.
-- The block-diagonal `Q` retains an inconsistency in the original covariance derivation; see [covariance limitation](limitations.md#linear-kf-process-covariance) before using it as a model for correlated position/velocity errors.
+- `Q = B*diag(sig_acc.^2)*B'` includes position–velocity correlations from the shared acceleration noise; see the [historical covariance comparison](limitations.md#linear-kf-process-covariance).
 - The covariance update is the simple form shown in the chapter; it does not add numerical symmetry or positive-semidefiniteness safeguards.

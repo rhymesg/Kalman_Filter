@@ -89,10 +89,11 @@ for m = 1:1:M
         
         % measurement residual
         y = z - z_p;
+        y(1:2) = atan2(sin(y(1:2)), cos(y(1:2)));
         
         % measurement matrix
         H = [pp(2)/(pp(1)^2+pp(2)^2), -pp(1)/(pp(1)^2+pp(2)^2), 0, zeros(1,3);
-            -pp(1)*pp(3)/(pp'*pp)/norm(pp(1:2)), -pp(2)*pp(3)/(pp'*pp)/norm(pp(1:2)), 1/norm(pp(1:2)), zeros(1,3);
+            -pp(1)*pp(3)/(pp'*pp)/norm(pp(1:2)), -pp(2)*pp(3)/(pp'*pp)/norm(pp(1:2)), norm(pp(1:2))/(pp'*pp), zeros(1,3);
             pp(1)/norm(pp), pp(2)/norm(pp), pp(3)/norm(pp), zeros(1,3)];
                 
         % Kalman gain

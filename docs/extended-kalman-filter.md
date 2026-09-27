@@ -24,10 +24,10 @@ The first angle is measured using `atan2(x,y)`, not the commonly used `atan2(y,x
 
 1. Propagate the estimate and covariance using the linear motion model.
 2. Evaluate `z_p = h(x_est(:,k))` at the predicted position relative to the sensor.
-3. Form the measurement Jacobian `H` at that relative position, following the printed Eq. (28).
-4. Compute `y = z - z_p`, `K = P*H'/(R+H*P*H')`, and apply the state and covariance corrections described in [the KF recursion](kalman-filter.md#prediction-and-correction).
+3. Form the measurement Jacobian `H` at that relative position, starting from Eq. (28) with the documented elevation-derivative correction.
+4. Compute `y = z - z_p`, wrap its angular components to the principal interval, calculate `K = P*H'/(R+H*P*H')`, and apply the state and covariance corrections described in [the KF recursion](kalman-filter.md#prediction-and-correction).
 
-For a general EKF, the transition and measurement matrices are the Jacobians of the nonlinear models at the current estimate, as in Eqs. (21)-(22). Here only the measurement model is nonlinear; its inherited Jacobian contains an [incorrect elevation derivative](limitations.md#target-tracking-jacobian).
+For a general EKF, the transition and measurement matrices are the Jacobians of the nonlinear models at the current estimate, as in Eqs. (21)-(22). Here only the measurement model is nonlinear; its elevation Jacobian is [corrected from the historical expression](limitations.md#target-tracking-jacobian).
 
 ## Paper-to-code map
 

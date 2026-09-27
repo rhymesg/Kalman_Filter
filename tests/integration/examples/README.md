@@ -43,3 +43,5 @@ matlab -batch "addpath('tests/integration/examples'); verify_figures"
 - Requests for a non-simulation figure must be rejected before creating an output directory.
 
 These checks are currently unrun in MATLAB. File-readability checks do not replace visual review, validate every plotted curve, or assert equality with the paper's figures.
+
+The example checks also verify the shared-acceleration position–velocity cross covariance and compare the final tracking Jacobian with centered differences of the observation model. Native execution remains pending.
