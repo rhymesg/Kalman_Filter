@@ -12,7 +12,7 @@ These tutorial examples preserve version 1.0.3 equations and settings; review th
 
 - MATLAB and Statistics and Machine Learning Toolbox are required: the scripts use [`normrnd`](https://www.mathworks.com/help/stats/normrnd.html).
 - The shell commands below use [`matlab -batch`](https://www.mathworks.com/help/matlab/ref/matlabmacos.html), available from R2019a; add your MATLAB executable to PATH.
-- The terrain example uses the included [DEM.mat](examples/DEM.mat); no download from `ref/` is required.
+- The terrain example uses the included [DEM.mat](examples/DEM.mat).
 - MATLAB execution has not yet been verified for this repository layout; Octave compatibility is not claimed.
 
 Clone the repository:
@@ -93,6 +93,6 @@ Machine-readable software and chapter metadata are in [CITATION.cff](CITATION.cf
 
 ## License and provenance
 
-The original bundle's [license](LICENSE) is retained verbatim, including its copyright and redistribution conditions. Citation requests are separate from those license conditions.
+The [license](LICENSE) specifies the copyright and redistribution conditions. Citation requests are separate from those license conditions.
 
-[Provenance](docs/provenance.md) records the source distribution, dataset, packaging changes, and verification limits. The local `ref/` folder is gitignored and is not needed to run the examples.
+See [provenance](docs/provenance.md) for source-distribution and dataset details, and [limitations](docs/limitations.md) before adapting the examples.

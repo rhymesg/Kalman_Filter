@@ -12,7 +12,7 @@ matlab -batch "addpath('tests/integration/examples'); verify_examples"
 
 The driver disables visible figures, uses seed 0 with Twister, and runs from the system temporary directory. Separate function workspaces contain the original scripts' `clear` calls; cleanup restores the working directory, path, random state, and figure-visibility default.
 
-The scripts still close existing figures; use the separate batch process above. No manually prepared data or files from `ref/` are required.
+The scripts still close existing figures; use the separate batch process above. The checks use the bundled data without manual preparation.
 
 ## Scenarios and acceptance
 
