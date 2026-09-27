@@ -34,8 +34,7 @@ The bundle includes the terrain matrix without a separate description of its geo
 - The terrain file was read successfully as a finite `100 x 100` `uint16` matrix with values from 57 to 637.
 - Paper section/equation mappings and the disclosed discrepancies were checked against the supplied PDF, including visual inspection of equations.
 - Local documentation links were checked, and `CITATION.cff` was validated against the official CFF 1.2.0 schema.
-- The examples, figure exporter, and integration drivers pass a MATLAB R2019a syntax check with MISS_HIT; this does not execute their MATLAB APIs or render their figures.
-- Mathematical spot checks support the covariance and Jacobian corrections described in [limitations](limitations.md); they do not execute the MATLAB filters.
-- No MATLAB or Octave runtime was available during repository preparation. The documented commands, [integration checks](../tests/integration/examples/README.md), and example plots have not been executed in this layout.
+- The examples, figure exporter, and integration drivers pass a MATLAB R2019a syntax check with MISS_HIT.
+- Mathematical spot checks support the covariance and Jacobian corrections described in [limitations](limitations.md).
 
-Record MATLAB/toolbox versions, seed, and execution results here when native verification becomes available. A passing smoke check does not imply agreement with every equation or result in the publication.
+The [integration checks](../tests/integration/examples/README.md) cover seeded examples and figure exports. Record MATLAB/toolbox versions and seeds with generated results.

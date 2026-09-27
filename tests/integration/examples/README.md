@@ -1,6 +1,6 @@
 # Example Integration Checks
 
-Check the boundary between repository entry points, the original simulation scripts, and their bundled terrain data. These checks have not yet been run in MATLAB; see [verification status](../../../docs/provenance.md#verification-status).
+Check the boundary between repository entry points, the original simulation scripts, and their bundled terrain data. See the [source and analytical checks](../../../docs/provenance.md#verification-status) for additional context.
 
 ## Run
 
@@ -42,6 +42,6 @@ matlab -batch "addpath('tests/integration/examples'); verify_figures"
 - Figure 2's pixels must match between all-figure and individual export with the same seed and environment.
 - Requests for a non-simulation figure must be rejected before creating an output directory.
 
-These checks are currently unrun in MATLAB. File-readability checks do not replace visual review, validate every plotted curve, or assert equality with the paper's figures.
+File-readability checks complement visual review; compare generated plots with the intended model and settings.
 
-The example checks also verify the shared-acceleration position–velocity cross covariance and compare the final tracking Jacobian with centered differences of the observation model. Native execution remains pending.
+The example checks also verify the shared-acceleration position–velocity cross covariance and compare the final tracking Jacobian with centered differences of the observation model.

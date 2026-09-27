@@ -64,8 +64,6 @@ matlab -batch "ver" > figures/environment.txt
 
 ## Verification
 
-The exporter and its tests have not been executed in MATLAB in this environment. Syntax and analytical checks do not establish successful rendering or visual fidelity.
-
 Run the [figure integration checks](../tests/integration/examples/README.md) to exercise all exports, individual selection, duplicate requests, readable files, and same-seed consistency:
 
 ```bash

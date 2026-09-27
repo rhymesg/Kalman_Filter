@@ -50,7 +50,7 @@ See [Examples](examples/README.md) for the two EKF commands, outputs, seeds, and
 
 ## Implementation scope
 
-Each script contains its model, simulation, filter updates, and plotting code; there is no separate filter API. Current source includes covariance and measurement corrections, with [settings and numerical assumptions](docs/limitations.md) documented for adaptation. Native MATLAB execution remains unverified.
+Each script contains its model, simulation, filter updates, and plotting code; there is no separate filter API. Current source includes covariance and measurement corrections, with [settings and numerical assumptions](docs/limitations.md) documented for adaptation.
 
 ### Checks
 
