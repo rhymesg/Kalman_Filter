@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use or adapt these methods or examples, please cite the chapter in preferred-citation."
+type: software
+title: "Kalman_Filter: MATLAB Kalman filter and extended Kalman filter examples"
+authors:
+  - family-names: Kim
+    given-names: Youngjoo
+repository-code: "https://github.com/rhymesg/Kalman_Filter"
+url: "https://github.com/rhymesg/Kalman_Filter"
+abstract: "MATLAB tutorial examples for INS/GNSS navigation, angle/range target tracking, and terrain-referenced navigation accompanying the peer-reviewed chapter Introduction to Kalman Filter and Its Applications."
+keywords:
+  - Kalman filter
+  - extended Kalman filter
+  - state estimation
+  - INS/GNSS navigation
+  - target tracking
+  - terrain-referenced navigation
+  - MATLAB
+  - tutorial
+preferred-citation:
+  type: generic
+  title: "Introduction to Kalman Filter and Its Applications"
+  collection-title: "Introduction and Implementations of the Kalman Filter"
+  authors:
+    - family-names: Kim
+      given-names: Youngjoo
+    - family-names: Bang
+      given-names: Hyochoong
+  year: 2018
+  doi: "10.5772/intechopen.80600"
+  url: "https://www.intechopen.com/chapters/63164"
+  publisher:
+    name: IntechOpen
