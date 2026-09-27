@@ -6,6 +6,8 @@ MATLAB tutorial examples of the Kalman filter (KF) and extended Kalman filter (E
 
 These are the authors' implementations accompanying the **peer-reviewed tutorial chapter** [*Introduction to Kalman Filter and Its Applications*](https://www.intechopen.com/chapters/63164), with source and terrain data available directly in this repository. See the [chapter citation](#citation), [implementation map](#algorithms-and-source), and [provenance](docs/provenance.md).
 
+The accompanying tutorial chapter has received **over 500 citations** on [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=8b6KtGYAAAAJ&citation_for_view=8b6KtGYAAAAJ:hC7cP41nSMkC).
+
 These tutorial examples preserve version 1.0.3 equations and settings; review the documented [covariance and Jacobian issues](docs/limitations.md) before adapting them.
 
 ## Installation
