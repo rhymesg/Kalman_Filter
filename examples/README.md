@@ -1,6 +1,6 @@
 # MATLAB Examples
 
-Run the chapter's three simulations and inspect their estimates, errors, and covariance histories. Requirements and cloning instructions are in the [repository README](../README.md#installation).
+Run the chapter's three simulations and inspect their estimates, errors, and covariance histories. Requirements and example commands are in the [repository README](../README.md#examples).
 
 ## Run
 
@@ -60,4 +60,4 @@ The code treats the first matrix index as x, the second as y, and uses grid spac
 
 ## Before adapting
 
-Read the [known limitations](../docs/limitations.md) and [citation guidance](../README.md#citation). These examples retain the source bundle's equations and settings; a successful execution is not evidence that every equation or statistical assumption is correct.
+Read the [model assumptions, settings, and corrections](../docs/limitations.md) and [citation guidance](../README.md#citation). A successful execution checks the implementation path, not every statistical assumption.

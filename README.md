@@ -8,28 +8,21 @@ These are the authors' implementations accompanying the **peer-reviewed tutorial
 
 The accompanying tutorial chapter has received **over 500 citations** on [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=8b6KtGYAAAAJ&citation_for_view=8b6KtGYAAAAJ:hC7cP41nSMkC).
 
-Review the documented [corrections and limitations](docs/limitations.md) before adapting these examples.
+## Method
 
-## Installation
+Predict the state and covariance with a motion model, then correct them using measurements. The linear KF uses position/velocity observations; the EKFs linearize angle/range or terrain-height observations around the current estimate.
 
-- MATLAB and Statistics and Machine Learning Toolbox are required: the scripts use [`normrnd`](https://www.mathworks.com/help/stats/normrnd.html).
-- The shell commands below use [`matlab -batch`](https://www.mathworks.com/help/matlab/ref/matlabmacos.html), available from R2019a; add your MATLAB executable to PATH.
-- The terrain example uses the included [DEM.mat](examples/DEM.mat).
-- MATLAB execution has not yet been verified for this repository layout; Octave compatibility is not claimed.
+### Algorithms and source
 
-Clone the repository:
+| Method and application | Chapter | Implementation and runnable example | Technical reference |
+|---|---|---|---|
+| Linear KF: inertial/GNSS position and velocity | Sections 2.2-2.3, Eqs. (3)-(18) | [KF.m](examples/KF.m) | [Kalman filter](docs/kalman-filter.md) |
+| EKF: angle/range target tracking | Sections 3.2-3.3.1, Eqs. (23)-(32) | [EKF_1.m](examples/EKF_1.m) | [Extended Kalman filter](docs/extended-kalman-filter.md) |
+| EKF: terrain-referenced navigation | Sections 3.2, 3.3.2, Eqs. (33)-(40) | [EKF_2.m](examples/EKF_2.m) | [Terrain navigation](docs/terrain-referenced-navigation.md) |
 
-```bash
-git clone https://github.com/rhymesg/Kalman_Filter.git
-```
+## Examples
 
-Enter its root directory:
-
-```bash
-cd Kalman_Filter
-```
-
-## Usage
+Run commands from the repository root with MATLAB and Statistics and Machine Learning Toolbox (`normrnd`). The shell commands use `matlab -batch` (R2019a or later); the terrain example uses the included [DEM.mat](examples/DEM.mat).
 
 Generate current-code versions of all seven simulation figures as PNG and PDF files:
 
@@ -55,35 +48,19 @@ In an interactive MATLAB session, select the repository root as the current fold
 
 See [Examples](examples/README.md) for the two EKF commands, outputs, seeds, and terrain-data conventions.
 
-## Development
+## Implementation scope
 
-Run the noninteractive [example integration checks](tests/integration/examples/README.md) from the repository root:
+Each script contains its model, simulation, filter updates, and plotting code; there is no separate filter API. Current source includes covariance and measurement corrections, with [settings and numerical assumptions](docs/limitations.md) documented for adaptation. Native MATLAB execution remains unverified.
 
-```bash
-matlab -batch "addpath('tests/integration/examples'); verify_examples"
-```
+### Checks
 
-Check chapter-figure generation and export:
+Run the focused [example and figure checks](tests/integration/examples/README.md):
 
 ```bash
-matlab -batch "addpath('tests/integration/examples'); verify_figures"
+matlab -batch "addpath('tests/integration/examples'); verify_examples; verify_figures"
 ```
 
-The checks exercise the entry point, example outputs, deterministic reruns, and terrain-file loading. They do not establish scientific correctness or reproduce the chapter's figures; see [verification status](docs/provenance.md#verification-status).
-
-Report problems through the repository's [issue tracker](https://github.com/rhymesg/Kalman_Filter/issues), including the script, MATLAB/toolbox versions, seed, and error or result.
-
-[Repository metadata](docs/repository-metadata.md) provides a suggested GitHub description and topics for maintainers.
-
-## Algorithms and source
-
-| Method and application | Chapter | Implementation and runnable example | Technical reference |
-|---|---|---|---|
-| Linear KF: inertial/GNSS position and velocity | Sections 2.2-2.3, Eqs. (3)-(18) | [KF.m](examples/KF.m) | [Kalman filter](docs/kalman-filter.md) |
-| EKF: angle/range target tracking | Sections 3.2-3.3.1, Eqs. (23)-(32) | [EKF_1.m](examples/EKF_1.m) | [Extended Kalman filter](docs/extended-kalman-filter.md) |
-| EKF: terrain-referenced navigation | Sections 3.2, 3.3.2, Eqs. (33)-(40) | [EKF_2.m](examples/EKF_2.m) | [Terrain navigation](docs/terrain-referenced-navigation.md) |
-
-Each script contains its model, Monte Carlo simulation, filter updates, and plotting code; there is no separate public filter API.
+These check example outputs, deterministic reruns, terrain loading, and figure export.
 
 ## Citation
 

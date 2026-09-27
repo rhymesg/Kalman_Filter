@@ -44,5 +44,5 @@ For a general EKF, the transition and measurement matrices are the Jacobians of 
 
 - A single measurement has no direct velocity component; velocity information can enter through dynamics and covariance coupling over successive measurements.
 - Process-noise and initial-covariance settings differ from the printed chapter; see the [comparison table](limitations.md#settings-that-differ-from-the-chapter).
-- Angle residuals are not wrapped, and the Jacobian is singular at zero horizontal range or zero range.
+- Azimuth and elevation residuals are wrapped to the principal interval before the update; the Jacobian remains singular at zero horizontal range or zero range.
 - The EKF uses local linearization and the simple covariance update; finite output alone does not establish consistency or convergence.

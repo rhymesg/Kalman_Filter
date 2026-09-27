@@ -4,7 +4,7 @@ Check the boundary between repository entry points, the original simulation scri
 
 ## Run
 
-From the repository root, with the [MATLAB requirements](../../../README.md#installation) installed:
+From the repository root, with the [MATLAB requirements](../../../README.md#examples) installed:
 
 ```bash
 matlab -batch "addpath('tests/integration/examples'); verify_examples"
